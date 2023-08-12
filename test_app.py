@@ -39,13 +39,11 @@ def getdrinks():
     drinks_list = []
     for drink in drinks.find():
         drinks_list.append({
-            '_id': str(drink['_id']),
-            'name': drink['name'],
-            'type': drink['type']
+            '_id': str(drink['_id'])
         })
     return jsonify(drinks_list)
 
-@app.route('/checkdrinks', methods=['POST'])
+@app.route('/drinks', methods=['POST'])
 def addDrink():
     data = request.get_json()
     new_drink = {
@@ -54,12 +52,6 @@ def addDrink():
     }
     drink_id = drinks.insert_one(new_drink).inserted_id
     return {'message': 'Drink added successfully', 'drink_id': str(drink_id)}
-
-@app.route('/drinks', methods=['POST'])
-def addDrink():
-    data = request.get_json()
-    # Process the data from the POST request
-    return {'message': 'POST request 1 successful'}
 
 @app.route('/drinks/<drink_id>', methods=['PUT'])
 def updateDrink(drink_id):
