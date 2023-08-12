@@ -1,0 +1,27 @@
+.words{
+    flex-grow: 1;
+    font-size: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color: white;
+}
+
+.carte{
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-inline: 6vw;
+}
+
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+}

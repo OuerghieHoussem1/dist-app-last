@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-block: 10vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.drink{
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+.drink:hover{
+    transform: scale(110%);
+}

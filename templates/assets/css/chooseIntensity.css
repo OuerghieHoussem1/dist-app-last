@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.containerButton{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 10vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.deguster{
+    width: 20vw;
+    align-self: center;
+}
