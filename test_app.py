@@ -141,4 +141,4 @@ def handle_disconnect():
     print('WebSocket disconnected')
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000)  # Change the port as needed
+    socketio.run(app, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)  # Change the port as needed
