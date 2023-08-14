@@ -1,5 +1,11 @@
 const image = document.getElementById("mainImage")
 
+
+localStorage.removeItem("card")
+localStorage.removeItem("taste")
+localStorage.removeItem("intensity")
+
+
 image.onclick = () => {
-    window.location.href = "http://127.0.0.1:5500/templates/passCard.html"
+    window.location.href = "http://localhost:5000/passCard"
 }

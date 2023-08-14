@@ -18,8 +18,8 @@ const onSuccess = (cardData) => {
     localStorage.setItem("card",JSON.stringify(cardData))
 
     setTimeout(() => {
-        window.location.href = "http://127.0.0.1:5500/templates/chooseTaste.html"
+        window.location.href = "http://localhost:5000/chooseTaste"
     }, 3000);
 }
 
-/* setTimeout(onSuccess, 3000, {cardName:"Houssem"}); */
+setTimeout(onSuccess, 3000, {cardName:"Houssem"});

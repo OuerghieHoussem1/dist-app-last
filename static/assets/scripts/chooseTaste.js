@@ -6,22 +6,22 @@ const onDrinksLoad = (drinks) => {
         const drinkElement = document.createElement("img")
         switch (drink.className){
             case "Cassis":
-                drinkElement.src = "./assets/images/1.png"
+                drinkElement.src = "/static/assets/images/1.png"
                 break;
             case "CitronVert":
-                drinkElement.src = "./assets/images/12.png"
+                drinkElement.src = "/static/assets/images/12.png"
                 break;
             case "Pasteque":
-                drinkElement.src = "./assets/images/123.png"
+                drinkElement.src = "/static/assets/images/123.png"
                 break;
             case "FiguedeBarbarie":
-                drinkElement.src = "./assets/images/1234.png"
+                drinkElement.src = "/static/assets/images/1234.png"
                 break;
             case "PecheetFruitdelaPassion":
-                drinkElement.src = "./assets/images/12345.png"
+                drinkElement.src = "/static/assets/images/12345.png"
                 break;
             case "Eau":
-                drinkElement.src = "./assets/images/1234567.png"
+                drinkElement.src = "/static/assets/images/1234567.png"
                 break;
         }
 
@@ -29,8 +29,8 @@ const onDrinksLoad = (drinks) => {
         drinkElement.dataset.saveur = drink.saveur
 
         drinkElement.onclick = (e)=>{
-            localStorage.setItem("saveur",JSON.stringify(e.srcElement.dataset.saveur))
-            window.location.href = "http://127.0.0.1:5500/templates/chooseIntensity.html"
+            localStorage.setItem("taste",JSON.stringify(e.srcElement.dataset.saveur))
+            window.location.href = "http://localhost:5000/chooseIntensity"
         }
 
         container.appendChild(drinkElement)

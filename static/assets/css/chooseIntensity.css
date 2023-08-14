@@ -10,6 +10,27 @@
     padding-block: 10vh;
     align-items: center;
     justify-items: center;
+    padding-block: 15vh;
+    padding-inline: 5vw;
+}
+
+.btn[data-chosen="true"] {
+    transform: scale(110%);
+}
+
+.btn{
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    width: 15vw;
+}
+
+.btn:hover{
+    transform: scale(110%);
+}
+
+.back{
+    margin-top: 5vh;
+    width: 13vw;
 }
 
 .deguster{

@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/chooseIntensity.css">
+    <link rel="stylesheet" href="/static/assets/css/main.css">
+    <link rel="stylesheet" href="/static/assets/css/chooseIntensity.css">
 </head>
 <body>
     <div class="container">
+        <img class="back btn" src="/static/assets/images/btn retour.png" alt="" srcset="" id="back">
         <div class="containerButton">
-            <img src="./assets/images/faible.png" alt="" srcset="">
-            <img src="./assets/images/moyenne.png" alt="" srcset="">
-            <img src="./assets/images/fort.png" alt="" srcset="">
+            <img class="btn" src="/static/assets/images/faible.png" alt="" srcset="" data-chosen="true" data-intensity="300">
+            <img class="btn" src="/static/assets/images/moyenne.png" alt="" srcset="" data-chosen="false" data-intensity="400">
+            <img class="btn" src="/static/assets/images/fort.png" alt="" srcset="" data-chosen="false" data-intensity="500">
         </div>
-        <img class="deguster" src="assets/images/btn deguster.png" alt="" srcset="">
+        <img class="deguster btn" src="/static/assets/images/btn deguster.png" alt="" srcset="" id="deguster">
     </div>
-    <script src="./assets/scripts/chooseIntensity.js"></script>
+    <script src="/static/assets/scripts/chooseIntensity.js"></script>
 </body>
 </html>

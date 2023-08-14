@@ -14,4 +14,5 @@ html, body {
     width: 100vw;
     height: 100vh;
     background-image: url("../images/background.png");
+    padding-inline: 10vw;
 }

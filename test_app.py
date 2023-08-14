@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, url_for
+from flask import Flask, request, jsonify, render_template
 from flask_socketio import SocketIO
 
 import pymongo
@@ -29,6 +29,22 @@ users = db["drinks"]
 @app.route('/')
 def index():
     return render_template('./index.html')
+
+@app.route('/passCard')
+def passCard():
+    return render_template('./passCard.html')
+
+@app.route('/chooseTaste')
+def chooseTaste():
+    return render_template('./chooseTaste.html')
+
+@app.route('/chooseIntensity')
+def chooseIntensity():
+    return render_template('./chooseIntensity.html')
+
+@app.route('/success')
+def success():
+    return render_template('./success.html')
 
 
 #-------------------DRINKS MANAGEMENT-------------------#
