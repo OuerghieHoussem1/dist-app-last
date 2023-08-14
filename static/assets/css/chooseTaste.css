@@ -9,6 +9,7 @@
 .drink{
     transition: all 250ms ease-in-out;
     cursor: pointer;
+    width: 40vw;
 }
 
 .drink:hover{
