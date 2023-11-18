@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 -u command.py -o 9000 &1
+nohup python3 /root/dist-app-last/test_app.py > /root/logs/flask_server_log.log 2>&1 &1
