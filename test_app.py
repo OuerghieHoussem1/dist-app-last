@@ -180,8 +180,6 @@ def login():
 @app.route("/taste/<taste>/<intensity>")
 def taste(taste, intensity):
 
-    print(taste)
-    print(intensity)
     print("Started")
 
     taste = int(taste)
