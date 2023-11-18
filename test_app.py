@@ -12,7 +12,7 @@ socketio = SocketIO(app)
 client = pymongo.MongoClient("mongodb+srv://houssemouerghie:testtest@cluster0.cmk7sds.mongodb.net/")
 
 
-db = client["app"]
+db = client["app-test"] #To change based on the machine
 
 
 cards = db["cards"]
