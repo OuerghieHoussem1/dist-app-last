@@ -5,6 +5,35 @@ import pymongo
 from bson.objectid import ObjectId
 
 
+import time
+
+import RPi.GPIO as GPIO
+
+import pigpio
+
+
+PIGPIO  = pigpio.pi()
+
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+
+PIN_SAVEUR_1 = 4
+PIN_SAVEUR_2 = 17
+PIN_SAVEUR_3 = 22
+PIN_SAVEUR_4 = 23
+PIN_SAVEUR_5 = 9
+PIN_EAU = 8
+
+
+
+
+GPIO.setup(PIN_SAVEUR_1, GPIO.OUT)
+GPIO.setup(PIN_SAVEUR_2, GPIO.OUT)
+GPIO.setup(PIN_SAVEUR_3, GPIO.OUT)
+GPIO.setup(PIN_SAVEUR_4, GPIO.OUT)
+GPIO.setup(PIN_SAVEUR_5, GPIO.OUT)
+GPIO.setup(PIN_EAU, GPIO.OUT)
+
 app = Flask(__name__)
 socketio = SocketIO(app)
 
@@ -144,8 +173,47 @@ def login():
         return {'message': 'User login successful'}
     else:
         return {'message': 'User login failed'}
+    
 
 
+#-------------------Pump controls-------------------#
+@app.route("/taste/<taste>/<intensity>")
+def taste(taste, intensity):
+
+    print(taste)
+    print(intensity)
+
+    print("Started")
+    if(taste==0):
+        GPIO.output(PIN_SAVEUR_1, GPIO.HIGH)
+    if(taste==2):
+        GPIO.output(PIN_SAVEUR_2, GPIO.HIGH)
+    if(taste==3):
+        GPIO.output(PIN_SAVEUR_3, GPIO.HIGH)
+    if(taste==4):
+        GPIO.output(PIN_SAVEUR_4, GPIO.HIGH)
+    if(taste==5):
+        GPIO.output(PIN_SAVEUR_5, GPIO.HIGH)
+    if(taste==6):
+        GPIO.output(PIN_EAU , GPIO.LOW)
+
+    time.sleep(intensity)
+
+    if(taste==0):
+        GPIO.output(PIN_SAVEUR_1, GPIO.LOW)
+    if(taste==2):
+        GPIO.output(PIN_SAVEUR_2, GPIO.LOW)
+    if(taste==3):
+        GPIO.output(PIN_SAVEUR_3, GPIO.LOW)
+    if(taste==4):
+        GPIO.output(PIN_SAVEUR_4, GPIO.LOW)
+    if(taste==5):
+        GPIO.output(PIN_SAVEUR_5, GPIO.LOW)
+    if(taste==6):
+        GPIO.output(PIN_EAU , GPIO.HIGH)
+
+    print("Finished")
+    return {'message': 'Good'}
 
 #Socket code
 @socketio.on('connect')

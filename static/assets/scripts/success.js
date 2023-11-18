@@ -1,6 +1,17 @@
 const card = JSON.parse(localStorage.getItem("card"))
 const taste = JSON.parse(localStorage.getItem("taste"))
 const intensity = JSON.parse(localStorage.getItem("intensity"))
-setTimeout(() => {
-    window.location.href = "http://localhost:5000/"
-}, 3000);
+
+
+fetch(`http://localhost:5000/${taste}/${intensity}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Handle the data
+        console.log(data);
+        window.location.href = "http://localhost:5000/"
+    })
