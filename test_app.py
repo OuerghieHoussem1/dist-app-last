@@ -182,8 +182,10 @@ def taste(taste, intensity):
 
     print(taste)
     print(intensity)
-
     print("Started")
+
+    taste = int(taste)
+    intensity = int(intensity)
     if(taste==0):
         GPIO.output(PIN_SAVEUR_1, GPIO.HIGH)
     if(taste==2):
