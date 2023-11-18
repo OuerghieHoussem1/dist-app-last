@@ -7,7 +7,7 @@ from bson.objectid import ObjectId
 
 import time
 
-import RPi.GPIO as GPIO
+""" import RPi.GPIO as GPIO
 
 import pigpio
 
@@ -33,7 +33,7 @@ GPIO.setup(PIN_SAVEUR_3, GPIO.OUT)
 GPIO.setup(PIN_SAVEUR_4, GPIO.OUT)
 GPIO.setup(PIN_SAVEUR_5, GPIO.OUT)
 GPIO.setup(PIN_EAU, GPIO.OUT)
-
+ """
 app = Flask(__name__)
 socketio = SocketIO(app)
 
@@ -180,9 +180,14 @@ def login():
 @app.route("/taste/<taste>/<intensity>")
 def taste(taste, intensity):
 
+    print(taste)   
+    print(intensity)   
     print("Started")
 
     taste = int(taste)
+    intensity = int(intensity)
+
+    """ taste = int(taste)
     intensity = int(intensity)
     if(taste==0):
         GPIO.output(PIN_SAVEUR_1, GPIO.HIGH)
@@ -195,11 +200,11 @@ def taste(taste, intensity):
     if(taste==5):
         GPIO.output(PIN_SAVEUR_5, GPIO.HIGH)
     if(taste==6):
-        GPIO.output(PIN_EAU , GPIO.LOW)
+        GPIO.output(PIN_EAU , GPIO.LOW) """
 
-    time.sleep(intensity)
+    time.sleep(intensity/1000)
 
-    if(taste==0):
+    """ if(taste==0):
         GPIO.output(PIN_SAVEUR_1, GPIO.LOW)
     if(taste==2):
         GPIO.output(PIN_SAVEUR_2, GPIO.LOW)
@@ -210,7 +215,7 @@ def taste(taste, intensity):
     if(taste==5):
         GPIO.output(PIN_SAVEUR_5, GPIO.LOW)
     if(taste==6):
-        GPIO.output(PIN_EAU , GPIO.HIGH)
+        GPIO.output(PIN_EAU , GPIO.HIGH) """
 
     print("Finished")
     return {'message': 'Good'}
