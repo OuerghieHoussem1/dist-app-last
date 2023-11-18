@@ -3,7 +3,7 @@ const taste = JSON.parse(localStorage.getItem("taste"))
 const intensity = JSON.parse(localStorage.getItem("intensity"))
 
 
-fetch(`http://localhost:5000/${taste}/${intensity}`)
+fetch(`http://localhost:5000/taste/${taste}/${intensity}`)
     .then(response => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
