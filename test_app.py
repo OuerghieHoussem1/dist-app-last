@@ -190,21 +190,6 @@ def taste(taste, intensity):
     taste = int(taste)
     intensity = int(intensity)
     if(taste==0):
-        GPIO.output(PIN_SAVEUR_1, GPIO.HIGH)
-    if(taste==2):
-        GPIO.output(PIN_SAVEUR_2, GPIO.HIGH)
-    if(taste==3):
-        GPIO.output(PIN_SAVEUR_3, GPIO.HIGH)
-    if(taste==4):
-        GPIO.output(PIN_SAVEUR_4, GPIO.HIGH)
-    if(taste==5):
-        GPIO.output(PIN_SAVEUR_5, GPIO.HIGH)
-    if(taste==6):
-        GPIO.output(PIN_EAU , GPIO.HIGH)
-
-    time.sleep(intensity/1000)
-
-    if(taste==0):
         GPIO.output(PIN_SAVEUR_1, GPIO.LOW)
     if(taste==2):
         GPIO.output(PIN_SAVEUR_2, GPIO.LOW)
@@ -217,10 +202,25 @@ def taste(taste, intensity):
     if(taste==6):
         GPIO.output(PIN_EAU , GPIO.LOW)
 
+    time.sleep(intensity/1000)
+
+    if(taste==0):
+        GPIO.output(PIN_SAVEUR_1, GPIO.HIGH)
+    if(taste==2):
+        GPIO.output(PIN_SAVEUR_2, GPIO.HIGH)
+    if(taste==3):
+        GPIO.output(PIN_SAVEUR_3, GPIO.HIGH)
+    if(taste==4):
+        GPIO.output(PIN_SAVEUR_4, GPIO.HIGH)
+    if(taste==5):
+        GPIO.output(PIN_SAVEUR_5, GPIO.HIGH)
+    if(taste==6):
+        GPIO.output(PIN_EAU , GPIO.HIGH)
+
     
-    GPIO.output(PIN_EAU , GPIO.HIGH)
-    time.sleep(4)
     GPIO.output(PIN_EAU , GPIO.LOW)
+    time.sleep(4)
+    GPIO.output(PIN_EAU , GPIO.HIGH)
 
     print("Finished")
     return {'message': 'Good'}
