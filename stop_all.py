@@ -7,7 +7,7 @@ PIGPIO  = pigpio.pi()
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-PIN_SAVEUR_1 = 27 #change 14
+PIN_SAVEUR_1 = 25 #change 4 27
 PIN_SAVEUR_2 = 17
 PIN_SAVEUR_3 = 22
 PIN_SAVEUR_4 = 24 #change 23
