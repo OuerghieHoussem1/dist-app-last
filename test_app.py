@@ -189,7 +189,7 @@ def taste(taste, intensity):
 
     taste = int(taste)
     intensity = int(intensity)
-    if(taste==0):
+    if(taste==1):
         GPIO.output(PIN_SAVEUR_1, GPIO.LOW)
     if(taste==2):
         GPIO.output(PIN_SAVEUR_2, GPIO.LOW)
@@ -204,7 +204,7 @@ def taste(taste, intensity):
 
     time.sleep(intensity/1000)
 
-    if(taste==0):
+    if(taste==1):
         GPIO.output(PIN_SAVEUR_1, GPIO.HIGH)
     if(taste==2):
         GPIO.output(PIN_SAVEUR_2, GPIO.HIGH)
