@@ -219,7 +219,7 @@ def taste(taste, intensity):
 
     
     GPIO.output(PIN_EAU , GPIO.HIGH)
-    time.sleep(4)
+    time.sleep(12)
     GPIO.output(PIN_EAU , GPIO.LOW)
 
     print("Finished")
