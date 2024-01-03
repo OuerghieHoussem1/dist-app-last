@@ -36,4 +36,5 @@
 .deguster{
     width: 20vw;
     align-self: center;
+    transform: scale(150%);
 }
