@@ -7,5 +7,5 @@ localStorage.removeItem("intensity")
 
 
 image.onclick = () => {
-    window.location.href = "http://localhost:5000/passCard"
+    window.location.href = "http://localhost:5000/chooseTaste"
 }
