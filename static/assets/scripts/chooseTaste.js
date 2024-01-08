@@ -9,16 +9,16 @@ const onDrinksLoad = (drinks) => {
                 drinkElement.src = "/static/assets/images/1.png"
                 break;
             case "CitronVert":
-                drinkElement.src = "/static/assets/images/12.png"
+                drinkElement.src = "/static/assets/images/12345.png"
                 break;
             case "Pasteque":
-                drinkElement.src = "/static/assets/images/123.png"
+                drinkElement.src = "/static/assets/images/12.png"
                 break;
             case "FiguedeBarbarie":
                 drinkElement.src = "/static/assets/images/1234.png"
                 break;
             case "PecheetFruitdelaPassion":
-                drinkElement.src = "/static/assets/images/12345.png"
+                drinkElement.src = "/static/assets/images/123.png"
                 break;
             case "Eau":
                 drinkElement.src = "/static/assets/images/1234567.png"
