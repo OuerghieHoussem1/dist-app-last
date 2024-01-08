@@ -40,7 +40,7 @@ const onDrinksLoad = (drinks) => {
 setTimeout(onDrinksLoad, 100,[
     {className:"Cassis",saveur:1},
     {className:"CitronVert",saveur:2},
-    {className:"Pasteque",saveur:3},
+    /* {className:"Pasteque",saveur:3}, */
     {className:"FiguedeBarbarie",saveur:4},
     {className:"PecheetFruitdelaPassion",saveur:5},
     {className:"Eau",saveur:6}
